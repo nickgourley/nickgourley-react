@@ -5,7 +5,9 @@ import {
     Link
   } from "react-router-dom";
 
-import Hangman from "./Hangman";
+import HomePage from "./HomePage";
+import ProjectsPage from "./ProjectsPage";
+import ContactPage from "./ContactPage";
 
 class App extends React.Component {
     render() {
@@ -17,10 +19,10 @@ class App extends React.Component {
                 <Link to="/">Home</Link>
                 </li>
                 <li>
-                <Link to="/hangman">Hangman</Link>
+                <Link to="/projects">Projects</Link>
                 </li>
                 <li>
-                <Link to="/users">Users</Link>
+                <Link to="/contact">Contact</Link>
                 </li>
             </ul>
             </nav>
@@ -28,31 +30,19 @@ class App extends React.Component {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-            <Route path="/about">
-                <About />
+            <Route path="/projects">
+                <ProjectsPage />
             </Route>
-            <Route path="/hangman">
-                <Hangman />
+            <Route path="/contact">
+                <ContactPage />
             </Route>
             <Route path="/">
-                <Home />
+                <HomePage />
             </Route>
             </Switch>
             </div>
         );
     }
 }
-
-function Home() {
-    return <h2>Home</h2>;
-  }
-  
-  function About() {
-    return <h2>About</h2>;
-  }
-  
-  function Users() {
-    return <h2>Users</h2>;
-  }
 
 export default App;
